@@ -17,6 +17,17 @@
             const startBtn = document.querySelector("#startBtn");
             const startScreen = document.querySelector("#startScreen");
             console.log(restartBtn);
+            const buttonSound = new Audio("../sound/button_click.mp3");
+            const henSound = new Audio("../sound/hen_lay.mp3");
+            henSound.volume = 0.5;
+            const eggcatch = new Audio("../sound/egg_catch.mp3");
+            eggcatch.volume = 0.5;
+            const eggcrack = new Audio("../sound/egg_crack.mp3");
+            eggcrack.volume = 0.5;
+            const birdpoop = new Audio("../sound/bird_poop.mp3");
+            birdpoop.volume = 0.5;
+            const gameoverSound = new Audio("../sound/game_over.mp3");
+            gameoverSound.volume = 0.5;
 
             //resize for latops
             function resizeGame() {
@@ -47,6 +58,8 @@
             ];
 
             startBtn.addEventListener("click", function() {
+                buttonSound.currentTime = 0;
+                buttonSound.play();
 
                 isPaused = false;
 
@@ -74,6 +87,8 @@
                 });
 
                 if (layFrame >= layFrames.length && layingHen !== -1) {
+                    henSound.currentTime = 0;
+                    henSound.play();
                     createEgg(layingHen);
                     layingHen = -1;
                     scheduleNextHen();
@@ -165,12 +180,16 @@
                         // CAUGHT EGG 🥚
                         eggsCaught++;
                         eggCounter.textContent = `🥚 Eggs: ${eggsCaught}`;
+                        eggcatch.currentTime = 0;
+                        eggcatch.play();
                         egg.remove();
 
                     } else if (isCaught && isPoop) {
                         // CAUGHT POOP 💩
                         lives = Math.max(0, lives - 1);
                         eggLives.textContent = `❤️ Lives: ${lives}`;
+                        birdpoop.currentTime = 0;
+                        birdpoop.play();
                         egg.remove();
 
                     } else if (!isCaught && !isPoop) {
@@ -179,6 +198,8 @@
                         eggLives.textContent = `❤️ Lives: ${lives}`;
 
                         egg.src = "../assets/eggs/egg_splat.png";
+                        eggcrack.currentTime = 0;
+                        eggcrack.play();
 
                         setTimeout(function() {
                             egg.remove();
@@ -194,6 +215,8 @@
                     if (lives <= 0) {
                         isGameOver = true;
                         console.log("GAME OVER! 💀");
+                        gameoverSound.currentTime = 0;
+                        gameoverSound.play();
                         gameOverPopup.style.display = "block";
 
                         document.getElementById("finalScore").textContent =
@@ -238,11 +261,18 @@
             pauseBtn.addEventListener("click", function() {
                 if (isGameOver === false && startScreen.style.display === "none") {
                     isPaused = !isPaused;
+                    buttonSound.currentTime = 0;
+                    buttonSound.play();
                 }
             });
 
             restartBtn.addEventListener("click", function() {
+                buttonSound.currentTime = 0;
+                buttonSound.play();
                 console.log("RESTART BUTTON CLICKED!");
-                location.reload();
+
+                setTimeout(function() {
+                    location.reload();
+                }, 250);
 
             });
