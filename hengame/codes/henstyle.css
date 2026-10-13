@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 body {
     margin: 0;
 }
@@ -80,24 +81,26 @@ body {
 
 #eggCounter {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 28px;
+    top: 8px;
+    right: 45px;
+        font-family: 'Coiny', cursive;
+    font-size: 30px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+   color: rgb(255, 236, 174);
     z-index: 10;
 }
 
 #eggLives {
     position: absolute;
-    top: 60px;
-    right: 20px;
-    font-size: 28px;
-    font-family: 'Fredoka', sans-serif;
+    top: 37px;
+    right: 45px;
+    font-size: 30px;
+        font-family: 'Coiny', cursive;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 236, 174);
     z-index: 10;
+
+
 }
 
 #Pause {
@@ -162,4 +165,25 @@ body {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
     font-size: 25px;
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 15px;
+    right: 0px;
+
+    width: 200px;
+    height: 80px;
+
+    background-image: url("../assets/ui/score_panel.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    z-index: 10;
 }

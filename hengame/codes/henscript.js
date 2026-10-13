@@ -219,10 +219,14 @@
                 if (event.key === "ArrowLeft") {
                     let basketX = basket.offsetLeft;
                     basketX -= 10;
+                    let maxX = game.offsetWidth - basket.offsetWidth;
+                    basketX = Math.max(0, Math.min(basketX, maxX));
                     basket.style.left = basketX + "px";
                 } else if (event.key === "ArrowRight") {
                     let basketX = basket.offsetLeft;
                     basketX += 10;
+                    let maxX = game.offsetWidth - basket.offsetWidth;
+                    basketX = Math.max(0, Math.min(basketX, maxX));
                     basket.style.left = basketX + "px";
                 }
 
