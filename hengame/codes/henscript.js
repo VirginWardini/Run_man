@@ -112,7 +112,7 @@
                 let isPoop = false;
 
                 if (randomItem < 0.25) {
-                    egg.src = "../assets/poop/poop.png";
+                    egg.src = "../assets/poop/Poop.png";
                     isPoop = true;
                 } else {
                     egg.src = "../assets/eggs/bronze_egg.png";
