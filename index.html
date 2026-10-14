@@ -3,14 +3,31 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Game Arcade</title>
+    <title>RUN</title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-    
-    <input type="text" placeholder="Enter your name">
-    <a href="gameselection.html">Start</a>
+
+    <div id="gameContainer">
+            <div id="game">
+                <button id ="runman"  class="gameButton"> START </button>
+                
+                <div id="hitboxDebug"></div>
+                <p id="jumpCounter">JUMPS: 0</p>
+                    <div id="gameOverPopup">
+                        <h1>GAME OVER</h1>
+                        
+                        <button id="restartButton"  class="gameButton" >RESTART</button>
+                        <!--<a class = " selectionButton" href="gameselection.html">SELECTION PAGE</a> -->
+        
+                    </div>
+                <img src="idle/fighter_Idle_0001.png" id="character">
+            </div>
+    </div>        
+            <script src="anim.js"></script>
+
+
 
 </body>
-</html>
+</html> 
